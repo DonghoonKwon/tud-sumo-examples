@@ -55,7 +55,6 @@ if __name__ == "__main__":
     # my_sim.load_objects("parameters.json")
     
     n, sim_dur, new_veh_idx = 1 / my_sim.step_length, 500 / my_sim.step_length, 0
-    pbar = tqdm(desc="Running sim (step 0, 0 vehs)", total=sim_dur)
     while my_sim.curr_step < sim_dur:
 
         # Set ramp metering rate.
@@ -64,7 +63,7 @@ if __name__ == "__main__":
             my_sim.set_tl_metering_rate(rm_id="a13_meter", metering_rate=randint(1200, 2000))
         
         # Step through n steps.
-        my_sim.step_through(n_steps=n, pbar=pbar)
+        my_sim.step_through(n_steps=n, pbar_max_steps=sim_dur)
 
         # Add new vehicles going from "urban_in_e" to "urban_out_w"
         if my_sim.curr_step % 50 / my_sim.step_length == 0:
@@ -96,5 +95,6 @@ if __name__ == "__main__":
 
     # Save the simulation data & print a summary, which is also saved.
     my_sim.save_data("example_data.json")
+    my_sim.save_data("example_data.pkl")
     my_sim.print_summary(save_file="example_summary.txt")
     
