@@ -5,12 +5,12 @@
  |   Example traffic controllers, with 2 ramp meters, 1 VSL   | 
  |        controller and 1 route guidance controller.         | 
  *============================================================*
- |                 Simulation Run: 26/07/2024                 | 
- |               15:04:00 - 15:04:11 (0:00:11)                | 
+ |                 Simulation Run: 02/08/2024                 | 
+ |               12:54:29 - 12:54:39 (0:00:10)                | 
  *------------------------------------------------------------*
  | Number of Steps:                                       500 | 
  | Step Length:                                           1.0 | 
- | Avg. Step Duration:                                 0.022s | 
+ | Avg. Step Duration:                                  0.02s | 
  | Units Type:                              Metric (km, km/h) | 
  | Seed:                                                    1 | 
  *============================================================*
@@ -18,19 +18,19 @@
  *============================================================*
  |                        Vehicle Data                        | 
  *------------------------------------------------------------*
- | Avg. No. Vehicles:                                  1165.0 | 
+ | Avg. No. Vehicles:                                  737.52 | 
  | Peak No. Vehicles:                                    1165 | 
- | Avg. No. Waiting Vehicles:                            39.0 | 
- | Peak No. Waiting Vehicles:                              39 | 
+ | Avg. No. Waiting Vehicles:                           48.11 | 
+ | Peak No. Waiting Vehicles:                             104 | 
  | Final No. Vehicles:                                   1165 | 
  | Individual Data:                                        No | 
  * ---------------------------------------------------------- *
- | Total TTS:                                         1165.0s | 
- | Total Delay:                                         39.0s | 
+ | Total TTS:                                       368759.0s | 
+ | Total Delay:                                      24055.0s | 
  *------------------------------------------------------------*
  |                         Trip Data                          | 
  *------------------------------------------------------------*
- | Incomplete Trips:                             1169 (63.4%) | 
+ | Incomplete Trips:                             1167 (63.4%) | 
  | Completed Trips:                               674 (36.6%) | 
  *------------------------------------------------------------*
  |                         Detectors                          | 

@@ -1,8 +1,8 @@
 from random import randint, seed
 import sys
-from tqdm import tqdm
 
 from tud_sumo.simulation import Simulation
+from tud_sumo.plot import Plotter
 
 if __name__ == "__main__":
 
@@ -50,6 +50,18 @@ if __name__ == "__main__":
     # Add scheduled events from a JSON file (can be dictionary). Use the format as in example_incident.json
     my_sim.add_events("example_scenario/example_incident.json")
 
+    # Add a new route that vehicles can be assigned to.
+    my_sim.add_route(("urban_in_e", "urban_out_w"), "new_route")
+
+    # Add a function that is called on each new vehicle in the simulation. Valid parameters are; curr_step,
+    # vehicle_id, route_id, vehicle_type, departure, origin, destination. Use add_vehicle_out_funcs() for
+    # functions called when vehicles exit the simulation (only with vehicle_id and/or curr_step).
+    vehicle_ids = []
+    def add_to_vehicle_list(vehicle_id):
+        vehicle_ids.append(vehicle_id)
+
+    my_sim.add_vehicle_in_funcs(add_to_vehicle_list)
+
     # These individual functions above can be replaced as below, where the 'parameters.json' file contains
     # a dictionary of all necessary parameters (under 'edges', 'junctions', 'phases', 'controllers' and 'events')
     # my_sim.load_objects("parameters.json")
@@ -65,11 +77,10 @@ if __name__ == "__main__":
         # Step through n steps.
         my_sim.step_through(n_steps=n, pbar_max_steps=sim_dur)
 
-        # Add new vehicles going from "urban_in_e" to "urban_out_w"
+        # Add new vehicles going from "urban_in_e" to "urban_out_w" (using previously defined route)
         if my_sim.curr_step % 50 / my_sim.step_length == 0:
-            od_pair = ("urban_in_e", "urban_out_w")
-            my_sim.add_vehicle(vehicle_id="lorry_"+str(new_veh_idx), vehicle_type="lorries", routing=od_pair, origin_lane="first")
-            my_sim.add_vehicle(vehicle_id="car_"+str(new_veh_idx), vehicle_type="cars", routing=od_pair)
+            my_sim.add_vehicle(vehicle_id="lorry_"+str(new_veh_idx), vehicle_type="lorries", routing="new_route", origin_lane="first")
+            my_sim.add_vehicle(vehicle_id="car_"+str(new_veh_idx), vehicle_type="cars", routing="new_route")
             new_veh_idx += 1
 
         if my_sim.curr_step == 100 / my_sim.step_length:
