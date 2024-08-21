@@ -5,12 +5,12 @@
  |   Example traffic controllers, with 2 ramp meters, 1 VSL   | 
  |        controller and 1 route guidance controller.         | 
  *============================================================*
- |                 Simulation Run: 02/08/2024                 | 
- |               12:54:29 - 12:54:39 (0:00:10)                | 
+ |                 Simulation Run: 21/08/2024                 | 
+ |               16:33:18 - 16:33:31 (0:00:13)                | 
  *------------------------------------------------------------*
  | Number of Steps:                                       500 | 
  | Step Length:                                           1.0 | 
- | Avg. Step Duration:                                  0.02s | 
+ | Avg. Step Duration:                                 0.026s | 
  | Units Type:                              Metric (km, km/h) | 
  | Seed:                                                    1 | 
  *============================================================*
