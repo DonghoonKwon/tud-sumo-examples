@@ -45,7 +45,8 @@ if __name__ == "__main__":
 
     # Add tracked edges. This will track some basic information, such as average speed etc, but can also
     # be used to create space-time diagrams as individual vehicle speeds and positions are tracked.
-    my_sim.add_tracked_edges(["126730026", "1191885773", "1191885771", "126730171", "1191885772", "948542172", "70944365", "308977078", "1192621075"])
+    tracked_edges = ["126730026", "1191885773", "1191885771", "126730171", "1191885772", "948542172", "70944365", "308977078", "1192621075"]
+    my_sim.add_tracked_edges(tracked_edges)
 
     # Add scheduled events from a JSON file (can be dictionary). Use the format as in example_incident.json
     my_sim.add_events("example_scenario/example_incident.json")
