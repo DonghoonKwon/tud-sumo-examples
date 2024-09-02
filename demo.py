@@ -61,7 +61,7 @@ if __name__ == "__main__":
     def add_to_vehicle_list(vehicle_id):
         vehicle_ids.append(vehicle_id)
 
-    my_sim.add_vehicle_in_funcs(add_to_vehicle_list)
+    my_sim.add_vehicle_in_functions(add_to_vehicle_list)
 
     # These individual functions above can be replaced as below, where the 'parameters.json' file contains
     # a dictionary of all necessary parameters (under 'edges', 'junctions', 'phases', 'controllers' and 'events')
