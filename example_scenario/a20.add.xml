@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2024-06-05 14:22:09 by Eclipse SUMO netedit Version v1_15_0+3072-a493b9138de
+<!-- generated on 2024-09-10 15:47:14 by Eclipse SUMO netedit Version v1_15_0+3072-a493b9138de
 -->
 
 <additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
@@ -16,8 +16,8 @@
     <inductionLoop id="rerouter_2" lane="629633083_2" pos="784.44" period="300.00" file="rerouter_2.xml"/>
     <inductionLoop id="utsc_e_in" lane="urban_in_e_0" pos="47.95" period="300.00" file="e1_2.xml"/>
     <inductionLoop id="utsc_e_out" lane="urban_out_e_0" pos="15.58" period="300.00" file="e1_3.xml"/>
-    <inductionLoop id="utsc_n_in_1" lane="reroute_test_1" pos="45.37" period="300.00" file="e1_5.xml"/>
-    <inductionLoop id="utsc_n_in_2" lane="reroute_test_0" pos="45.68" period="300.00" file="e1_4.xml"/>
+    <inductionLoop id="utsc_n_in_1" lane="diversion_1" pos="45.37" period="300.00" file="e1_5.xml"/>
+    <inductionLoop id="utsc_n_in_2" lane="diversion_0" pos="45.68" period="300.00" file="e1_4.xml"/>
     <inductionLoop id="utsc_w_in" lane="urban_in_w_0" pos="44.35" period="300.00" file="e1_1.xml"/>
     <inductionLoop id="utsc_w_out" lane="urban_out_w_0" pos="11.30" period="300.00" file="e1_0.xml"/>
     <entryExitDetector id="a13_ramp_queue" pos="4266.34,1268.04" period="300.00" file="a13_ramp_queue.xml">

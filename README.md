@@ -1,5 +1,7 @@
 # TUD-SUMO Example
 
+![Example Scenario](example_scenario/example_scenario.png)
+
 `demo.py` contains an example usage of TUD-SUMO, with multiple controllers and events.
 
 Run with the command line argument `-gui` to run the example using the GUI, and `-seed 'x'` to run with a specific seed.

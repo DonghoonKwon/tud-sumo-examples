@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2024-06-05 14:22:18 by Eclipse SUMO netedit Version v1_15_0+3072-a493b9138de
+<!-- generated on 2024-09-10 15:47:21 by Eclipse SUMO netedit Version v1_15_0+3072-a493b9138de
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumocfg-file value="/Users/callumevans/Desktop/tud_sumo/tud_sumo/examples/example_scenario/a20.sumocfg"/>
-        <additional-files value="/Users/callumevans/Desktop/tud_sumo/tud_sumo/examples/example_scenario/a20.add.xml"/>
-        <route-files value="/Users/callumevans/Desktop/tud_sumo/tud_sumo/examples/example_scenario/a20.rou.xml"/>
-        <sumo-net-file value="/Users/callumevans/Desktop/tud_sumo/tud_sumo/examples/example_scenario/a20.net.xml"/>
+        <sumocfg-file value="/Users/callumevans/Desktop/tuds_example/example_scenario/a20.sumocfg"/>
+        <additional-files value="/Users/callumevans/Desktop/tuds_example/example_scenario/a20.add.xml"/>
+        <route-files value="/Users/callumevans/Desktop/tuds_example/example_scenario/a20.rou.xml"/>
+        <sumo-net-file value="/Users/callumevans/Desktop/tuds_example/example_scenario/a20.net.xml"/>
     </input>
 
     <output>
-        <output-file value="/Users/callumevans/Desktop/tud_sumo/tud_sumo/examples/example_scenario/a20.net.xml"/>
+        <output-file value="/Users/callumevans/Desktop/tuds_example/example_scenario/a20.net.xml"/>
         <output.street-names value="true"/>
     </output>
 
@@ -930,6 +930,10 @@
         <lane id="crooswijk_in_1" index="1" allow="private emergency authority army vip passenger hov taxi bus coach delivery truck trailer motorcycle evehicle custom1 custom2" speed="36.11" length="76.12" shape="7619.61,2456.07 7619.59,2456.73 7619.47,2459.08 7618.99,2467.65 7618.68,2476.06 7618.59,2480.55 7618.80,2484.59 7619.36,2489.54 7621.06,2495.51 7623.93,2502.96 7631.84,2518.56 7637.89,2528.72"/>
         <param key="ref" value="A20"/>
     </edge>
+    <edge id="diversion" from="J2" to="utsc" name="Diversion" priority="-1" spreadType="center" shape="8127.05,2796.29 8117.40,2778.56 8110.68,2760.79 8104.97,2733.59">
+        <lane id="diversion_0" index="0" speed="13.89" length="59.66" shape="8125.53,2796.84 8115.94,2779.23 8109.14,2761.24 8104.86,2740.84"/>
+        <lane id="diversion_1" index="1" speed="13.89" length="59.66" shape="8128.34,2795.31 8118.86,2777.89 8112.22,2760.34 8107.99,2740.18"/>
+    </edge>
     <edge id="mainline_in" from="621490909" to="931066422" priority="14" type="highway.motorway" spreadType="center" shape="9439.52,3178.93 9309.45,3139.82 9137.12,3095.39">
         <lane id="mainline_in_0" index="0" allow="private emergency authority army vip passenger hov taxi bus coach delivery truck trailer motorcycle evehicle custom1 custom2" speed="27.78" length="288.79" acceleration="1" shape="9438.14,3183.53 9308.16,3144.44 9160.13,3106.28"/>
         <lane id="mainline_in_1" index="1" allow="private emergency authority army vip passenger hov taxi bus coach delivery truck trailer motorcycle evehicle custom1 custom2" speed="27.78" length="288.79" acceleration="1" shape="9439.06,3180.46 9309.02,3141.36 9160.93,3103.18"/>
@@ -943,10 +947,6 @@
         <lane id="mainline_out_2" index="2" allow="private emergency authority army vip passenger hov taxi bus coach delivery truck trailer motorcycle evehicle custom1 custom2" speed="27.78" length="596.92" shape="1148.07,762.48 961.34,737.85 556.01,686.44"/>
         <lane id="mainline_out_3" index="3" allow="private emergency authority army vip passenger hov taxi bus coach delivery truck trailer motorcycle evehicle custom1 custom2" speed="27.78" length="596.92" shape="1148.49,759.31 961.75,734.68 556.41,683.27"/>
         <param key="ref" value="A20"/>
-    </edge>
-    <edge id="reroute_test" from="J2" to="utsc" name="Reroute Test" priority="-1" spreadType="center" shape="8127.05,2796.29 8117.40,2778.56 8110.68,2760.79 8104.97,2733.59">
-        <lane id="reroute_test_0" index="0" speed="13.89" length="59.66" shape="8125.53,2796.84 8115.94,2779.23 8109.14,2761.24 8104.86,2740.84"/>
-        <lane id="reroute_test_1" index="1" speed="13.89" length="59.66" shape="8128.34,2795.31 8118.86,2777.89 8112.22,2760.34 8107.99,2740.18"/>
     </edge>
     <edge id="schiedam_in" from="44432566" to="659915030" priority="9" type="highway.motorway_link" spreadType="center" shape="2041.04,826.37 2015.53,816.12 1996.18,808.96 1976.11,805.03 1970.06,805.34 1961.98,805.74 1947.67,808.73">
         <lane id="schiedam_in_0" index="0" allow="private emergency authority army vip passenger hov taxi bus coach delivery truck trailer motorcycle evehicle custom1 custom2" speed="36.11" length="72.38" shape="2040.44,827.85 2014.95,817.61 1995.75,810.51 1976.00,806.64 1972.65,806.81"/>
@@ -1389,7 +1389,7 @@
         <request index="0" response="00" foes="00" cont="0"/>
         <request index="1" response="00" foes="00" cont="0"/>
     </junction>
-    <junction id="utsc" type="traffic_light" x="8104.97" y="2733.59" incLanes="reroute_test_0 reroute_test_1 urban_in_e_0 urban_in_w_0" intLanes=":utsc_0_0 :utsc_1_0 :utsc_2_0 :utsc_3_0" shape="8103.29,2741.17 8109.55,2739.85 8109.54,2738.11 8109.86,2737.49 8110.39,2737.05 8111.13,2736.77 8112.09,2736.67 8111.98,2730.27 8099.27,2730.30 8099.17,2736.70 8101.05,2737.22 8101.80,2737.84 8102.42,2738.71 8102.92,2739.81">
+    <junction id="utsc" type="traffic_light" x="8104.97" y="2733.59" incLanes="diversion_0 diversion_1 urban_in_e_0 urban_in_w_0" intLanes=":utsc_0_0 :utsc_1_0 :utsc_2_0 :utsc_3_0" shape="8103.29,2741.17 8109.55,2739.85 8109.54,2738.11 8109.86,2737.49 8110.39,2737.05 8111.13,2736.77 8112.09,2736.67 8111.98,2730.27 8099.27,2730.30 8099.17,2736.70 8101.05,2737.22 8101.80,2737.84 8102.42,2738.71 8102.92,2739.81">
         <request index="0" response="0100" foes="0100" cont="0"/>
         <request index="1" response="1100" foes="1100" cont="0"/>
         <request index="2" response="0000" foes="0011" cont="0"/>
@@ -1602,19 +1602,19 @@
     <connection from="948542172" to="70944365" fromLane="2" toLane="2" via=":3282923080_0_2" dir="s" state="M"/>
     <connection from="E1" to="E1.51" fromLane="0" toLane="0" via=":J1_0_0" dir="s" state="M"/>
     <connection from="E1" to="E1.51" fromLane="0" toLane="1" via=":J1_0_1" dir="s" state="M"/>
-    <connection from="E1.51" to="reroute_test" fromLane="0" toLane="0" via=":J2_0_0" dir="s" state="M"/>
-    <connection from="E1.51" to="reroute_test" fromLane="1" toLane="1" via=":J2_0_1" dir="s" state="M"/>
+    <connection from="E1.51" to="diversion" fromLane="0" toLane="0" via=":J2_0_0" dir="s" state="M"/>
+    <connection from="E1.51" to="diversion" fromLane="1" toLane="1" via=":J2_0_1" dir="s" state="M"/>
     <connection from="a13_in" to="29281962" fromLane="0" toLane="0" via=":a13_meter_0_0" tl="a13_meter" linkIndex="0" dir="s" state="O"/>
     <connection from="centrum_in" to="449902136" fromLane="0" toLane="0" via=":44494017_0_0" dir="s" state="M"/>
     <connection from="centrum_in" to="449902136" fromLane="1" toLane="1" via=":44494017_0_1" dir="s" state="M"/>
     <connection from="crooswijk_in" to="126730201" fromLane="0" toLane="0" via=":11071280889_0_0" dir="s" state="M"/>
     <connection from="crooswijk_in" to="126730201" fromLane="1" toLane="1" via=":11071280889_0_1" dir="s" state="M"/>
+    <connection from="diversion" to="urban_out_w" fromLane="0" toLane="0" via=":utsc_0_0" tl="utsc" linkIndex="0" dir="r" state="o"/>
+    <connection from="diversion" to="urban_out_e" fromLane="1" toLane="0" via=":utsc_1_0" tl="utsc" linkIndex="1" dir="l" state="o"/>
     <connection from="mainline_in" to="629633083" fromLane="0" toLane="0" via=":931066422_0_0" dir="s" state="Z"/>
     <connection from="mainline_in" to="629633083" fromLane="1" toLane="0" via=":931066422_0_1" dir="s" state="Z"/>
     <connection from="mainline_in" to="629633083" fromLane="2" toLane="1" keepClear="0" via=":931066422_0_2" dir="s" state="M"/>
     <connection from="mainline_in" to="629633083" fromLane="3" toLane="2" via=":931066422_0_3" dir="s" state="M"/>
-    <connection from="reroute_test" to="urban_out_w" fromLane="0" toLane="0" via=":utsc_0_0" tl="utsc" linkIndex="0" dir="r" state="o"/>
-    <connection from="reroute_test" to="urban_out_e" fromLane="1" toLane="0" via=":utsc_1_0" tl="utsc" linkIndex="1" dir="l" state="o"/>
     <connection from="schiedam_in" to="126710390" fromLane="0" toLane="0" via=":659915030_0_0" dir="s" state="m"/>
     <connection from="schiedam_in" to="126710390" fromLane="1" toLane="0" via=":659915030_0_1" dir="s" state="M"/>
     <connection from="spaanse_polder_in" to="321532776" fromLane="0" toLane="0" via=":44416518_0_0" dir="s" state="M"/>
@@ -1838,8 +1838,8 @@
     <connection from=":J0_0" to="629633083.833" fromLane="3" toLane="3" dir="s" state="M"/>
     <connection from=":J1_0" to="E1.51" fromLane="0" toLane="0" dir="s" state="M"/>
     <connection from=":J1_0" to="E1.51" fromLane="1" toLane="1" dir="s" state="M"/>
-    <connection from=":J2_0" to="reroute_test" fromLane="0" toLane="0" dir="s" state="M"/>
-    <connection from=":J2_0" to="reroute_test" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":J2_0" to="diversion" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":J2_0" to="diversion" fromLane="1" toLane="1" dir="s" state="M"/>
     <connection from=":a13_meter_0" to="29281962" fromLane="0" toLane="0" dir="s" state="M"/>
     <connection from=":crooswijk_meter_0" to="702792368" fromLane="0" toLane="0" dir="s" state="M"/>
     <connection from=":crooswijk_meter_0" to="702792368" fromLane="1" toLane="1" dir="s" state="M"/>

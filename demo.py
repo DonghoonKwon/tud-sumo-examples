@@ -21,8 +21,8 @@ if __name__ == "__main__":
 
     # Add a tracked junction to the intersection with ID "utsc", which will track signal phases/times.
     my_sim.add_tracked_junctions({"utsc": {"flow_params": {"inflow_detectors": ["utsc_n_in_1", "utsc_n_in_2", "utsc_w_in", "utsc_e_in"],
-                                                           "outflow_detectors": ["utsc_w_out", "utsc_e_out"],
-                                                           "vehicle_types": ["cars", "lorries", "motorcycles", "vans"]}}})
+                                                        "outflow_detectors": ["utsc_w_out", "utsc_e_out"],
+                                                        "vehicle_types": ["cars", "lorries", "motorcycles", "vans"]}}})
 
     # Set traffic signal phases. The junc_phases dict can be used for multiple junctions.
     my_sim.set_phases({"utsc": {"phases": ["GGrr", "yyrr", "rrGG", "rryy"], "times": [27, 3, 17, 3]}})
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     # parameters (inflow/outflow detectors used to calculate in/out flow).
     my_sim.add_tracked_junctions({"crooswijk_meter": {'meter_params': {'min_rate': 200, 'max_rate': 2000, 'queue_detector': "cw_ramp_queue"},
                                                     'flow_params': {'inflow_detectors': ["cw_ramp_inflow", "cw_rm_upstream"], 'outflow_detectors': ["cw_rm_downstream"]}},
-                                  "a13_meter": {'meter_params': {'min_rate': 200, 'max_rate': 2000, 'queue_detector': "a13_ramp_queue"},
+                                "a13_meter": {'meter_params': {'min_rate': 200, 'max_rate': 2000, 'queue_detector': "a13_ramp_queue"},
                                                 'flow_params': {'inflow_detectors': ["a13_ramp_inflow", "a13_rm_upstream"], 'outflow_detectors': ["a13_rm_downstream"]}}})
     
     # Add Route Guidance (RG) & Variable Speed Limit (VSL) controllers. RG controllers need a detector or
@@ -54,19 +54,30 @@ if __name__ == "__main__":
     # Add a new route that vehicles can be assigned to.
     my_sim.add_route(("urban_in_e", "urban_out_w"), "new_route")
 
-    # Add a function that is called on each new vehicle in the simulation. Valid parameters are; curr_step,
-    # vehicle_id, route_id, vehicle_type, departure, origin, destination. Use add_vehicle_out_funcs() for
-    # functions called when vehicles exit the simulation (only with vehicle_id and/or curr_step).
-    vehicle_ids = []
-    def add_to_vehicle_list(vehicle_id):
-        vehicle_ids.append(vehicle_id)
-
-    my_sim.add_vehicle_in_functions(add_to_vehicle_list)
-
     # These individual functions above can be replaced as below, where the 'parameters.json' file contains
     # a dictionary of all necessary parameters (under 'edges', 'junctions', 'phases', 'controllers' and 'events')
     # my_sim.load_objects("parameters.json")
-    
+
+    # This file can either be created manually, or by saving objects in previous simulations. This is done
+    # using the save_objects function as below.
+    my_sim.save_objects("objects.json")
+
+    # Add a function that is called on each new vehicle in the simulation. Simulation parameters are; curr_step,
+    # vehicle_id, route_id, vehicle_type, departure, origin, destination. These values are filled automatically.
+    # For other parameters, use a parameters dictionary as below. Use add_vehicle_out_funcs() for functions
+    # called when vehicles exit the simulation (only with vehicle_id and/or curr_step). Vehicle in/out functions
+    # can be removed using remove_vehicle_[in/out]_functions().
+
+    vehicle_ids = []
+    def add_to_vehicle_arr(simulation, vehicle_id, arr):
+        """
+        Append vehicle ID and initial speed to an array.
+        """
+        veh_speed = simulation.get_vehicle_vals(vehicle_id, "speed")
+        arr.append((vehicle_id, veh_speed))
+
+    my_sim.add_vehicle_in_functions(add_to_vehicle_arr, parameters={"arr": vehicle_ids})
+
     n, sim_dur, new_veh_idx = 1 / my_sim.step_length, 500 / my_sim.step_length, 0
     while my_sim.curr_step < sim_dur:
 
