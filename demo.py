@@ -68,7 +68,7 @@ if __name__ == "__main__":
     # called when vehicles exit the simulation (only with vehicle_id and/or curr_step). Vehicle in/out functions
     # can be removed using remove_vehicle_[in/out]_functions().
 
-    vehicle_ids = []
+    vehicle_ids, new_veh_idx = [], 0
     def add_to_vehicle_arr(simulation, vehicle_id, arr):
         """
         Append vehicle ID and initial speed to an array.
@@ -78,16 +78,20 @@ if __name__ == "__main__":
 
     my_sim.add_vehicle_in_functions(add_to_vehicle_arr, parameters={"arr": vehicle_ids})
 
-    n, sim_dur, new_veh_idx = 1 / my_sim.step_length, 500 / my_sim.step_length, 0
-    while my_sim.curr_step < sim_dur:
+    n, sim_dur, warmup = 1, 500 / my_sim.step_length, 0 / my_sim.step_length
+    
+    if warmup > 0:
+        my_sim.step_through(n_steps=warmup, pbar_max_steps=sim_dur+warmup, keep_data=False)
+
+    while my_sim.curr_step < sim_dur + warmup:
 
         # Set ramp metering rate.
         if my_sim.curr_step % 50 / my_sim.step_length == 0:
             my_sim.set_tl_metering_rate(rm_id="crooswijk_meter", metering_rate=randint(1200, 2000))
             my_sim.set_tl_metering_rate(rm_id="a13_meter", metering_rate=randint(1200, 2000))
         
-        # Step through n steps.
-        my_sim.step_through(n_steps=n, pbar_max_steps=sim_dur)
+        # Step through n seconds.
+        my_sim.step_through(n_seconds=n, pbar_max_steps=sim_dur+warmup)
 
         # Add new vehicles going from "urban_in_e" to "urban_out_w" (using previously defined route)
         if my_sim.curr_step % 50 / my_sim.step_length == 0:
