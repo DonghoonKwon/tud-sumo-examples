@@ -1,9 +1,22 @@
 # TUD-SUMO Example
 
-![Example Scenario](example_scenario/example_scenario.png)
+There are 2 different example scenarios included:
 
-`demo.py` contains an example usage of TUD-SUMO, with multiple controllers and events.
+1. **_Basic Scenario_**: Acts as an integrity check to ensure both SUMO and TUD-SUMO are installed and runs correctly.
+2. **_A20 Scenario_**: A complex scenario of the A20 in Rotterdam, with multiple controllers and events. To show the gui, run with the command line flag `-gui` and use `-seed {x}` to run with a specific seed.
 
-Run with the command line argument `-gui` to run the example using the GUI, and `-seed 'x'` to run with a specific seed.
+The scenarios can be run with either `basic_scenario/demo.py` or `a20_scenario/demo.py`. The networks used in each scenario are shown below.
 
 The full documentation can be found here: [tud-sumo.github.io/docs/](https://tud-sumo.github.io/docs/)
+
+## Basic Scenario
+
+The network used is a simple ~300m stretch of road with a constant demand of 1800veh/hr throughout the simulation. If the SUMO GUI (Graphical User Interface) is shown and the simulation is able to run for 1000s, everything should be installed correctly.
+
+![Basic scenario network](basic_example/basic_scenario/network.png)
+
+## A20 Scenario
+
+Here, the northern section of the ringroad around Rotterdam, the A20 between Schiedam and the Kralingse Bos is simulated. This scenario aims to demonstrate the full functionality of TUD-SUMO, with multiple ramp meters, variable speed limit and route guidance controllers, as well as several different events and interactions.
+
+![Example Scenario](a20_example/a20_scenario/network.png)
