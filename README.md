@@ -11,12 +11,12 @@ The full documentation can be found here: [tud-sumo.github.io/docs/](https://tud
 
 ## Basic Scenario
 
-The network used is a simple ~300m stretch of road with a constant demand of 1800veh/hr throughout the simulation. If the SUMO GUI (Graphical User Interface) is shown and the simulation is able to run for 1000s, everything should be installed correctly.
+The network is a simple ~300m stretch of road with a constant demand of 1800veh/hr throughout the simulation. If the SUMO GUI (Graphical User Interface) is shown and the simulation is able to run for 1000s, everything should be installed correctly. _Congratulations!_
 
 ![Basic scenario network](basic_example/basic_scenario/network.png)
 
 ## A20 Scenario
 
-Here, the northern section of the ringroad around Rotterdam, the A20 between Schiedam and the Kralingse Bos is simulated. This scenario aims to demonstrate the full functionality of TUD-SUMO, with multiple ramp meters, variable speed limit and route guidance controllers, as well as several different events and interactions.
+Here, the northern section of the motorway ringroad around Rotterdam, the A20 between Schiedam and the Kralingse Bos, is simulated. This scenario aims to demonstrate the full functionality of TUD-SUMO, with multiple ramp meters, variable speed limit and route guidance controllers, as well as several different events and interactions.
 
 ![Example Scenario](a20_example/a20_scenario/network.png)
