@@ -2,7 +2,7 @@
 
 There are 2 different example scenarios included:
 
-1. **_Basic Scenario_**: Acts as an integrity check to ensure both SUMO and TUD-SUMO are installed and runs correctly.
+1. **_Basic Scenario_**: Acts as an integrity check to ensure both SUMO and TUD-SUMO are installed and run correctly.
 2. **_A20 Scenario_**: A complex scenario of the A20 in Rotterdam, with multiple controllers and events. To show the gui, run with the command line flag `-gui` and use `-seed {x}` to run with a specific seed.
 
 The scenarios can be run with either `basic_scenario/demo.py` or `a20_scenario/demo.py`. The networks used in each scenario are shown below.
