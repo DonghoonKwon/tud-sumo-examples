@@ -26,7 +26,14 @@ if __name__ == "__main__":
                                                         "vehicle_types": ["cars", "lorries", "motorcycles", "vans"]}}})
 
     # Set traffic signal phases. The junc_phases dict can be used for multiple junctions.
-    my_sim.set_phases({"utsc": {"phases": ["GGrr", "yyrr", "rrGG", "rryy"], "times": [27, 3, 17, 3]}})
+    # set_m_phases() can be used to set phases according to different movements (here, movements 1 & 2)
+    phases = {"phases": {1: ["G", "y", "r"], 2: ["r", "G", "y"]},
+              "times":  {1: [ 27,  3,   20], 2: [ 30,  17,  3]},
+              "masks":  {1: "1100",          2: "0011"}}
+    
+    my_sim.set_m_phases({"utsc": phases})
+
+    # This is equivalent to: my_sim.set_phases({"utsc": {"phases": ["GGrr", "yyrr", "rrGG", "rryy"], "times": [27, 3, 17, 3]}})
 
     # Add a ramp meter to the junction with ID "crooswijk_meter". The junc_params dict can be used to
     # define meter specifc parameters (min/max rate, spillback tracking or queue detectors) and flow specific
