@@ -7,8 +7,8 @@ if __name__ == "__main__":
                         scenario_desc="TUD-SUMO integrity check.")
 
     # Start the simulation, defining the sumo config files.
-    my_sim.start("basic_scenario/sumo_config.sumocfg",
-                 gui=True,
+    my_sim.start("./basic_scenario/sumo_config.sumocfg",
+                 gui=False,
                  seed=1)
     
     # Run through the simulation for 1000 steps.
